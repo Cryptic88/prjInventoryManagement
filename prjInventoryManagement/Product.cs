@@ -28,7 +28,7 @@ namespace prjInventoryManagement
             return total;
         }
 
-        public static List<Product> GetProductsByQuantity(this List<Product> products, int lowQuantity)
+        public static List<Product> GetProductsByQuantity(this List<Product> products, int lowQuantity) //Extension method for low stock products
         {
             
             return products.Where(p => p.Quantity <= lowQuantity).ToList();
@@ -36,7 +36,7 @@ namespace prjInventoryManagement
         public static void DisplayProductDetails(this List<Product> products)
         {
             var productInfo = from p in products
-                              select new
+                              select new //LINQ query that selects the Products name and price and puts them into an anonymous type
                               {
                                   ProductName = p.Name,
                                   ProductPrice = p.Price
