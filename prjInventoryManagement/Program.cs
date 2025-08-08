@@ -20,7 +20,7 @@ namespace prjInventoryManagement
             Console.WriteLine($"Total price of products: R {totalPrice}\n");
 
             int lowQuantity = 5;
-            IEnumerable<Product> lowStockProducts = products.GetProductsByQuantity(lowQuantity);
+            IEnumerable<Product> lowStockProducts = products.GetProductsByQuantity(lowQuantity); //Using extension method
 
             Console.WriteLine("Products that are low in stock:");
             foreach (var product in lowStockProducts)

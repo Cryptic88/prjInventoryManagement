@@ -28,7 +28,7 @@ namespace prjInventoryManagement
             return total;
         }
 
-        public static List<Product> GetProductsByQuantity(this List<Product> products, int lowQuantity) //Extension method for low stock products
+        public static IEnumerable<Product> GetProductsByQuantity(this List<Product> products, int lowQuantity) //Extension method for low stock products
         {
             
             return products.Where(p => p.Quantity <= lowQuantity).ToList();
